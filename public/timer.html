@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таймер обратного отсчета</title>
+</head>
+<body>
+    <h1>Таймер обратного отсчета</h1>
+    
+    <div id="timerDisplay">
+        <span id="minutes">00</span>:<span id="seconds">00</span>
+    </div>
+    
+    <div id="status">Таймер запущен...</div>
+    
+    <br><br>
+    <a href="/">Вернуться на главную страницу</a>
+    
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        let totalSeconds = parseInt(urlParams.get('seconds')) || 60;
+        
+        const minutesElement = document.getElementById('minutes');
+        const secondsElement = document.getElementById('seconds');
+        const statusElement = document.getElementById('status');
+        
+        function updateTimer() {
+            if (totalSeconds < 0) {
+                statusElement.textContent = 'Таймер завершен!';
+                clearInterval(timerInterval);
+                return;
+            }
+            
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+            
+            minutesElement.textContent = minutes.toString().padStart(2, '0');
+            secondsElement.textContent = seconds.toString().padStart(2, '0');
+            
+            totalSeconds--;
+        }
+        updateTimer();
+        const timerInterval = setInterval(updateTimer, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таймер обратного отсчета</title>
+</head>
+<body>
+    <h1>Установите время таймера</h1>
+    <form action="/start" method="POST">
+        <label for="seconds">Время в секундах:</label>
+        <br><br>
+        <input 
+            type="number" 
+            id="seconds" 
+            name="seconds" 
+            min="1" 
+            value="60" 
+            required
+        >
+        <br><br>
+        <button type="submit">Запустить таймер</button>
+    </form>
+    
+</body>
+</html>
