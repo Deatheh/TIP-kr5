@@ -6,9 +6,9 @@
     
     <h3><b>Index</b></h3>
     
-    [GET] <code>http://localhost:3000/</code> - начальная страница сайта, где можно выбрать начальное время таймера
-    [POST] <code>http://localhost:3000/start</code> - запрос-редирект на страницу с таймером
+    [GET] http://localhost:3000/ - начальная страница сайта, где можно выбрать начальное время таймера
+    [POST] http://localhost:3000/start - запрос-редирект на страницу с таймером
     
     
     <h3><b>Timer</b></h3>
-    [GET] <code>http://localhost:3000/timer</code> - страница с таймером. Принимает query параметр <code>second</code>
+    [GET] http://localhost:3000/timer- страница с таймером. Принимает query параметр <code>second</code>
